@@ -2,8 +2,8 @@ title: 《伤寒论》
 description: 传承中医经典，研习伤寒论
 author: 伤寒论研习社
 email: 
-baseurl: ""
-url: "https://me888888.github.io/sm"
+baseurl: "/sm"
+url: "https://me888888.github.io"
 lang: zh-CN
 
 # Jekyll 配置

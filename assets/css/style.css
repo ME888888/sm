@@ -1,0 +1,253 @@
+/* 伤寒论研习社 - 简约禅意风格 */
+:root {
+  --bg-color: #faf8f5;
+  --text-color: #2c2c2c;
+  --accent-color: #4a7c59;
+  --gold-color: #b8860b;
+  --light-gray: #e8e4df;
+  --serif: 'Noto Serif SC', serif;
+  --sans: 'Noto Sans SC', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--sans);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.8;
+  font-size: 16px;
+}
+
+.page-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header */
+.site-header {
+  padding: 60px 0 40px;
+  text-align: center;
+  border-bottom: 1px solid var(--light-gray);
+}
+
+.site-title {
+  font-family: var(--serif);
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-color);
+  letter-spacing: 0.1em;
+}
+
+.site-subtitle {
+  font-family: var(--serif);
+  font-size: 1rem;
+  color: var(--accent-color);
+  margin-top: 10px;
+  letter-spacing: 0.2em;
+}
+
+.nav {
+  margin-top: 30px;
+}
+
+.nav a {
+  color: var(--text-color);
+  text-decoration: none;
+  margin: 0 20px;
+  font-size: 0.95rem;
+  transition: color 0.3s;
+}
+
+.nav a:hover {
+  color: var(--accent-color);
+}
+
+/* Hero Section */
+.hero {
+  padding: 80px 0;
+  text-align: center;
+}
+
+.hero-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.site-description {
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 2;
+}
+
+.divider {
+  width: 60px;
+  height: 2px;
+  background: var(--accent-color);
+  margin: 30px auto;
+}
+
+/* About Section */
+.about-section {
+  padding: 60px 0;
+  border-top: 1px solid var(--light-gray);
+}
+
+.about-section h2 {
+  font-family: var(--serif);
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 40px;
+  color: var(--text-color);
+}
+
+.about-content p {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 40px;
+  color: #555;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.feature {
+  text-align: center;
+  padding: 30px 20px;
+  background: #fff;
+  border: 1px solid var(--light-gray);
+  border-radius: 4px;
+}
+
+.feature h3 {
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  color: var(--accent-color);
+  margin-bottom: 15px;
+}
+
+.feature p {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Posts Section */
+.posts-section {
+  padding: 60px 0;
+  border-top: 1px solid var(--light-gray);
+}
+
+.posts-section h2 {
+  font-family: var(--serif);
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.posts-list {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.post-item {
+  display: flex;
+  align-items: baseline;
+  padding: 15px 0;
+  border-bottom: 1px dashed var(--light-gray);
+}
+
+.post-date {
+  font-size: 0.85rem;
+  color: #999;
+  min-width: 100px;
+}
+
+.post-link {
+  color: var(--text-color);
+  text-decoration: none;
+  font-family: var(--serif);
+  font-size: 1.05rem;
+}
+
+.post-link:hover {
+  color: var(--accent-color);
+}
+
+.more-link {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.more-link a {
+  color: var(--accent-color);
+  text-decoration: none;
+}
+
+/* Post Page */
+.post {
+  padding: 60px 0;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.post-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.post-title {
+  font-family: var(--serif);
+  font-size: 2rem;
+  color: var(--text-color);
+  margin-bottom: 15px;
+}
+
+.post-meta {
+  font-size: 0.9rem;
+  color: #999;
+}
+
+.post-content {
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  line-height: 2;
+}
+
+.post-content p {
+  margin-bottom: 1.5em;
+}
+
+/* Footer */
+.site-footer {
+  text-align: center;
+  padding: 40px 0;
+  border-top: 1px solid var(--light-gray);
+  font-size: 0.85rem;
+  color: #999;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .features {
+    grid-template-columns: 1fr;
+  }
+  
+  .site-title {
+    font-size: 1.8rem;
+  }
+  
+  .post-item {
+    flex-direction: column;
+    gap: 5px;
+  }
+}

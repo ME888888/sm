@@ -1,0 +1,21 @@
+title: 伤寒论研习社
+description: 传承中医经典，研习伤寒论
+author: 伤寒论研习社
+email: 
+baseurl: ""
+url: "https://me888888.gitee.io/blog"
+lang: zh-CN
+
+# Jekyll 配置
+markdown: kramdown
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Gitee Pages 需要的内容
+include: ["_pages", "_posts"]
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md

@@ -7,18 +7,20 @@ title: 首页
     <div class="hero-content">
       <h1 class="site-title">伤寒论研习社</h1>
       <p class="site-subtitle">传承中医经典 · 弘扬古圣智慧</p>
-      <div class="divider"></div>
+      <div class="divider"><span>◆</span></div>
       <p class="site-description">
         《伤寒论》为东汉张仲景所著，是中医临床医学的奠基之作。<br>
-        研习伤寒，探寻六经辨证之道，传承千年中医智慧。
+        全书以六经辨证为主线，系统阐述外感病及杂病的诊治规律。<br>
+        研习伤寒，探寻辨证之道，传承千年中医智慧。
       </p>
+      <div class="seal">中医</div>
     </div>
   </section>
 
   <section class="about-section">
-    <h2>关于伤寒论</h2>
+    <h2>经典要义</h2>
     <div class="about-content">
-      <p>《伤寒论》是中医四大经典之一，全称《伤寒杂病论》。全书以六经辨证为主线，系统阐述了外感病及杂病的诊治规律。</p>
+      <p>《伤寒论》创立六经辨证体系，为中医临床学奠定基础。书中载方一百一十三首，配伍严谨，疗效确切，历千年临床验证，至今仍指导中医实践。</p>
       <div class="features">
         <div class="feature">
           <h3>六经辨证</h3>
@@ -26,7 +28,7 @@ title: 首页
         </div>
         <div class="feature">
           <h3>经方传承</h3>
-          <p>113首经典方剂配伍严谨，疗效确切，千年临床验证</p>
+          <p>一百一十三首经典方剂，配伍严谨，千年临床验证</p>
         </div>
         <div class="feature">
           <h3>辨证论治</h3>
@@ -39,15 +41,15 @@ title: 首页
   <section class="posts-section">
     <h2>最新文章</h2>
     <div class="posts-list">
-      {% for post in site.posts limit:5 %}
+      {% for post in site.posts limit:8 %}
       <div class="post-item">
-        <time class="post-date">{{ post.date | date: '%Y年%m月%d日' }}</time>
+        <span class="post-date">{{ post.date | date: '%Y年%m月%d日' }}</span>
         <a href="{{ post.url }}" class="post-link">{{ post.title }}</a>
       </div>
       {% endfor %}
     </div>
-    {% if site.posts.size > 5 %}
-    <p class="more-link"><a href="/blog/posts/">查看更多文章 →</a></p>
+    {% if site.posts.size > 8 %}
+    <p class="more-link"><a href="/posts/">查看全部文章 →</a></p>
     {% endif %}
   </section>
 </div>

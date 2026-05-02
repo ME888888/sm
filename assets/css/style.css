@@ -1,186 +1,287 @@
-/* 伤寒论研习社 - 简约禅意风格 */
+/* 伤寒论研习社 - 传统中医风格 */
 :root {
-  --bg-color: #faf8f5;
-  --text-color: #2c2c2c;
-  --accent-color: #4a7c59;
-  --gold-color: #b8860b;
-  --light-gray: #e8e4df;
-  --serif: 'Noto Serif SC', serif;
-  --sans: 'Noto Sans SC', sans-serif;
+  --bg-color: #f5f0e6;
+  --bg-paper: #faf7f0;
+  --text-color: #2c1810;
+  --accent-red: #8b2323;
+  --accent-gold: #c9a227;
+  --accent-green: #2d5a3d;
+  --border-color: #d4c5a9;
+  --muted: #6b5b4f;
+  --serif: 'Noto Serif SC', 'SimSun', serif;
+  --sans: 'Noto Sans SC', 'Microsoft YaHei', sans-serif;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
+/* 背景纹理 */
 body {
   font-family: var(--sans);
   background-color: var(--bg-color);
   color: var(--text-color);
-  line-height: 1.8;
+  line-height: 1.9;
   font-size: 16px;
+  background-image: 
+    radial-gradient(circle at 20% 50%, rgba(139,35,35,0.03) 0%, transparent 50%),
+    radial-gradient(circle at 80% 50%, rgba(45,90,61,0.03) 0%, transparent 50%);
 }
 
 .page-wrapper {
-  max-width: 900px;
+  max-width: 960px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 24px;
 }
 
-/* Header */
+/* ========== Header ========== */
 .site-header {
-  padding: 60px 0 40px;
+  padding: 50px 0 35px;
   text-align: center;
-  border-bottom: 1px solid var(--light-gray);
+  border-bottom: 2px solid var(--accent-red);
+  position: relative;
+  background: linear-gradient(to bottom, var(--bg-paper), transparent);
 }
+
+.site-header::before,
+.site-header::after {
+  content: "◆";
+  position: absolute;
+  bottom: -10px;
+  color: var(--accent-red);
+  font-size: 12px;
+  background: var(--bg-color);
+  padding: 0 8px;
+}
+
+.site-header::before { left: calc(50% - 60px); }
+.site-header::after { right: calc(50% - 60px); }
 
 .site-title {
   font-family: var(--serif);
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   font-weight: 700;
-  color: var(--text-color);
-  letter-spacing: 0.1em;
+  color: var(--accent-red);
+  letter-spacing: 0.15em;
+  margin-bottom: 8px;
 }
 
 .site-subtitle {
+  font-size: 0.95rem;
+  color: var(--muted);
+  letter-spacing: 0.3em;
+  margin-top: 5px;
+}
+
+.description {
   font-family: var(--serif);
   font-size: 1rem;
-  color: var(--accent-color);
-  margin-top: 10px;
-  letter-spacing: 0.2em;
+  color: var(--muted);
+  margin-top: 15px;
+  font-style: italic;
 }
 
 .nav {
-  margin-top: 30px;
+  margin-top: 28px;
+  padding-top: 15px;
+  border-top: 1px dashed var(--border-color);
+  display: flex;
+  justify-content: center;
+  gap: 8px;
 }
 
 .nav a {
   color: var(--text-color);
   text-decoration: none;
-  margin: 0 20px;
+  padding: 8px 22px;
   font-size: 0.95rem;
-  transition: color 0.3s;
+  border: 1px solid var(--border-color);
+  background: var(--bg-paper);
+  transition: all 0.3s;
+  letter-spacing: 0.1em;
+}
+
+.nav a:first-child {
+  border-color: var(--accent-red);
+  color: var(--accent-red);
 }
 
 .nav a:hover {
-  color: var(--accent-color);
+  background: var(--accent-red);
+  color: #fff;
+  border-color: var(--accent-red);
 }
 
-/* Hero Section */
+/* ========== Hero ========== */
 .hero {
-  padding: 80px 0;
+  padding: 70px 0 50px;
   text-align: center;
 }
 
 .hero-content {
-  max-width: 600px;
+  max-width: 650px;
   margin: 0 auto;
+  padding: 40px 50px;
+  background: var(--bg-paper);
+  border: 1px solid var(--border-color);
+  position: relative;
+}
+
+.hero-content::before {
+  content: "";
+  position: absolute;
+  top: 8px; left: 8px; right: 8px; bottom: 8px;
+  border: 1px solid var(--border-color);
+  pointer-events: none;
 }
 
 .site-description {
   font-family: var(--serif);
   font-size: 1.1rem;
-  color: #555;
-  line-height: 2;
+  color: var(--text-color);
+  line-height: 2.2;
+  margin-bottom: 25px;
 }
 
-.divider {
+/* 印章风格装饰 */
+.seal {
+  display: inline-block;
   width: 60px;
-  height: 2px;
-  background: var(--accent-color);
-  margin: 30px auto;
+  height: 60px;
+  border: 3px solid var(--accent-red);
+  color: var(--accent-red);
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 54px;
+  text-align: center;
+  transform: rotate(-5deg);
+  margin-top: 20px;
 }
 
-/* About Section */
+/* ========== About Section ========== */
 .about-section {
-  padding: 60px 0;
-  border-top: 1px solid var(--light-gray);
+  padding: 50px 0;
+  border-top: 1px solid var(--border-color);
 }
 
 .about-section h2 {
   font-family: var(--serif);
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   text-align: center;
-  margin-bottom: 40px;
-  color: var(--text-color);
+  color: var(--accent-red);
+  margin-bottom: 35px;
+  letter-spacing: 0.15em;
+}
+
+.about-section h2::before,
+.about-section h2::after {
+  content: "━━";
+  color: var(--accent-gold);
+  margin: 0 15px;
 }
 
 .about-content p {
   text-align: center;
   max-width: 700px;
   margin: 0 auto 40px;
-  color: #555;
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  color: var(--text-color);
+  line-height: 2;
 }
 
 .features {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
+  gap: 25px;
   margin-top: 40px;
 }
 
 .feature {
   text-align: center;
   padding: 30px 20px;
-  background: #fff;
-  border: 1px solid var(--light-gray);
-  border-radius: 4px;
+  background: var(--bg-paper);
+  border: 1px solid var(--border-color);
+  position: relative;
+}
+
+.feature::before {
+  content: "";
+  position: absolute;
+  top: 5px; left: 5px; right: 5px; bottom: 5px;
+  border: 1px dashed var(--border-color);
+  pointer-events: none;
 }
 
 .feature h3 {
   font-family: var(--serif);
-  font-size: 1.1rem;
-  color: var(--accent-color);
-  margin-bottom: 15px;
+  font-size: 1.15rem;
+  color: var(--accent-green);
+  margin-bottom: 12px;
+  letter-spacing: 0.1em;
 }
 
 .feature p {
   font-size: 0.9rem;
-  color: #666;
+  color: var(--muted);
+  line-height: 1.8;
 }
 
-/* Posts Section */
+/* ========== Posts Section ========== */
 .posts-section {
-  padding: 60px 0;
-  border-top: 1px solid var(--light-gray);
+  padding: 50px 0;
+  border-top: 1px solid var(--border-color);
 }
 
 .posts-section h2 {
   font-family: var(--serif);
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   text-align: center;
-  margin-bottom: 40px;
+  color: var(--accent-red);
+  margin-bottom: 35px;
+  letter-spacing: 0.15em;
+}
+
+.posts-section h2::before,
+.posts-section h2::after {
+  content: "━━";
+  color: var(--accent-gold);
+  margin: 0 15px;
 }
 
 .posts-list {
-  max-width: 600px;
+  max-width: 650px;
   margin: 0 auto;
+  background: var(--bg-paper);
+  border: 1px solid var(--border-color);
+  padding: 30px 40px;
 }
 
 .post-item {
   display: flex;
   align-items: baseline;
-  padding: 15px 0;
-  border-bottom: 1px dashed var(--light-gray);
+  padding: 16px 0;
+  border-bottom: 1px dotted var(--border-color);
+  font-family: var(--serif);
+}
+
+.post-item:last-child {
+  border-bottom: none;
 }
 
 .post-date {
   font-size: 0.85rem;
-  color: #999;
-  min-width: 100px;
+  color: var(--muted);
+  min-width: 110px;
+  font-family: var(--sans);
 }
 
 .post-link {
   color: var(--text-color);
   text-decoration: none;
-  font-family: var(--serif);
   font-size: 1.05rem;
+  transition: color 0.3s;
 }
 
 .post-link:hover {
-  color: var(--accent-color);
+  color: var(--accent-red);
 }
 
 .more-link {
@@ -189,20 +290,37 @@ body {
 }
 
 .more-link a {
-  color: var(--accent-color);
+  color: var(--accent-red);
   text-decoration: none;
+  font-family: var(--serif);
+  letter-spacing: 0.1em;
+  border-bottom: 2px solid var(--accent-gold);
+  padding-bottom: 2px;
 }
 
-/* Post Page */
+/* ========== Post Page ========== */
 .post {
-  padding: 60px 0;
-  max-width: 700px;
-  margin: 0 auto;
+  padding: 50px 0;
 }
 
 .post-header {
   text-align: center;
-  margin-bottom: 50px;
+  margin-bottom: 45px;
+  padding-bottom: 30px;
+  border-bottom: 2px solid var(--accent-red);
+  position: relative;
+}
+
+.post-header::after {
+  content: "◆";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--accent-red);
+  font-size: 12px;
+  background: var(--bg-color);
+  padding: 0 12px;
 }
 
 .post-title {
@@ -210,44 +328,185 @@ body {
   font-size: 2rem;
   color: var(--text-color);
   margin-bottom: 15px;
+  letter-spacing: 0.1em;
 }
 
 .post-meta {
   font-size: 0.9rem;
-  color: #999;
+  color: var(--muted);
+  font-family: var(--sans);
 }
 
+.post-meta .categories {
+  color: var(--accent-green);
+  border: 1px solid var(--accent-green);
+  padding: 2px 10px;
+  margin-left: 8px;
+  font-size: 0.8rem;
+}
+
+/* 文章内容 */
 .post-content {
+  max-width: 720px;
+  margin: 0 auto;
   font-family: var(--serif);
   font-size: 1.05rem;
-  line-height: 2;
+  line-height: 2.2;
+  background: var(--bg-paper);
+  padding: 40px 50px;
+  border: 1px solid var(--border-color);
+  position: relative;
+}
+
+.post-content::before {
+  content: "";
+  position: absolute;
+  top: 10px; left: 10px; right: 10px; bottom: 10px;
+  border: 1px solid var(--border-color);
+  pointer-events: none;
+}
+
+.post-content h2 {
+  font-family: var(--serif);
+  font-size: 1.4rem;
+  color: var(--accent-red);
+  margin: 35px 0 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border-color);
+  letter-spacing: 0.1em;
+}
+
+.post-content h3 {
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  color: var(--accent-green);
+  margin: 25px 0 15px;
 }
 
 .post-content p {
-  margin-bottom: 1.5em;
+  margin-bottom: 1.3em;
+  text-align: justify;
 }
 
-/* Footer */
+.post-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 0.95rem;
+}
+
+.post-content th {
+  background: var(--accent-red);
+  color: #fff;
+  padding: 12px 15px;
+  text-align: left;
+  font-family: var(--sans);
+  letter-spacing: 0.05em;
+}
+
+.post-content td {
+  padding: 12px 15px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.post-content tr:hover {
+  background: rgba(139,35,35,0.05);
+}
+
+.post-content ul, .post-content ol {
+  margin: 15px 0 20px 25px;
+}
+
+.post-content li {
+  margin-bottom: 8px;
+}
+
+.post-content blockquote {
+  margin: 25px 0;
+  padding: 20px 25px;
+  background: rgba(201,162,39,0.08);
+  border-left: 4px solid var(--accent-gold);
+  font-style: italic;
+  position: relative;
+}
+
+.post-content blockquote::before {
+  content: "「";
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 2rem;
+  color: var(--accent-gold);
+  font-family: var(--serif);
+}
+
+.post-content strong {
+  color: var(--accent-red);
+  font-weight: 600;
+}
+
+.post-content hr {
+  border: none;
+  border-top: 1px dashed var(--border-color);
+  margin: 35px 0;
+}
+
+/* ========== Footer ========== */
 .site-footer {
   text-align: center;
   padding: 40px 0;
-  border-top: 1px solid var(--light-gray);
+  border-top: 2px solid var(--accent-red);
+  margin-top: 30px;
   font-size: 0.85rem;
-  color: #999;
+  color: var(--muted);
 }
 
-/* Responsive */
+.site-footer a {
+  color: var(--accent-red);
+  text-decoration: none;
+}
+
+.site-footer p:first-child {
+  font-family: var(--serif);
+  letter-spacing: 0.1em;
+  margin-bottom: 8px;
+}
+
+/* ========== Responsive ========== */
 @media (max-width: 768px) {
   .features {
     grid-template-columns: 1fr;
+    gap: 20px;
   }
   
   .site-title {
-    font-size: 1.8rem;
+    font-size: 2rem;
+  }
+  
+  .nav {
+    flex-wrap: wrap;
+  }
+  
+  .nav a {
+    padding: 6px 16px;
+    font-size: 0.9rem;
+  }
+  
+  .hero-content,
+  .posts-list,
+  .post-content {
+    padding: 25px 20px;
   }
   
   .post-item {
     flex-direction: column;
     gap: 5px;
+  }
+  
+  .about-section h2::before,
+  .about-section h2::after,
+  .posts-section h2::before,
+  .posts-section h2::after {
+    display: none;
   }
 }

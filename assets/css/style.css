@@ -32,7 +32,7 @@ body {
 
 /* ========== Header ========== */
 .site-header {
-  padding: 25px 0 20px;
+  padding: 15px 0 15px;
   text-align: center;
   border-bottom: 2px solid var(--accent-red);
   position: relative;

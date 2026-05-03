@@ -4,7 +4,6 @@ title: 文章列表
 permalink: /posts/
 ---
 <div class="posts-page">
-  <h1 class="page-title">文章列表</h1>
   <div class="posts-list">
     {% for post in site.posts %}
     <div class="post-item">

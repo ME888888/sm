@@ -77,11 +77,12 @@ body {
 }
 
 .description {
-  font-family: var(--serif);
-  font-size: 0.95rem;
+  font-family: var(--sans);
+  font-size: 0.8rem;
   color: var(--muted);
-  margin-top: 10px;
-  font-style: italic;
+  margin-top: 8px;
+  font-style: normal;
+  letter-spacing: 0.05em;
 }
 
 .nav {

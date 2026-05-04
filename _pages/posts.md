@@ -12,4 +12,5 @@ permalink: /posts/
     </div>
     {% endfor %}
   </div>
+  <!-- Updated: 文章列表包含所有分类 -->
 </div>
